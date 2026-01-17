@@ -20,12 +20,12 @@ final class Version20240822194300 extends AbstractMigration
     public function up(Schema $schema): void
     {
         // this up() migration is auto-generated, please modify it to your needs
-        $this->addSql('ALTER TABLE capsule CHANGE prix prix DOUBLE PRECISION DEFAULT NULL');
+        $this->addSql('ALTER TABLE capsule ALTER COLUMN prix TYPE DOUBLE PRECISION');
     }
 
     public function down(Schema $schema): void
     {
         // this down() migration is auto-generated, please modify it to your needs
-        $this->addSql('ALTER TABLE capsule CHANGE prix prix NUMERIC(10, 2) DEFAULT NULL');
+        $this->addSql('ALTER TABLE capsule ALTER COLUMN prix TYPE NUMERIC(10, 2)');
     }
 }

@@ -20,12 +20,12 @@ final class Version20240822232255 extends AbstractMigration
     public function up(Schema $schema): void
     {
         // this up() migration is auto-generated, please modify it to your needs
-        $this->addSql('ALTER TABLE capsule CHANGE muselet coffret TINYINT(1) NOT NULL');
+        $this->addSql('ALTER TABLE capsule RENAME COLUMN muselet TO coffret');
     }
 
     public function down(Schema $schema): void
     {
         // this down() migration is auto-generated, please modify it to your needs
-        $this->addSql('ALTER TABLE capsule CHANGE coffret muselet TINYINT(1) NOT NULL');
+        $this->addSql('ALTER TABLE capsule RENAME COLUMN coffret TO muselet');
     }
 }

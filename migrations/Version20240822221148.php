@@ -20,12 +20,12 @@ final class Version20240822221148 extends AbstractMigration
     public function up(Schema $schema): void
     {
         // this up() migration is auto-generated, please modify it to your needs
-        $this->addSql('ALTER TABLE capsule CHANGE image_name image VARCHAR(255) DEFAULT NULL');
+        $this->addSql('ALTER TABLE capsule RENAME COLUMN image_name TO image');
     }
 
     public function down(Schema $schema): void
     {
         // this down() migration is auto-generated, please modify it to your needs
-        $this->addSql('ALTER TABLE capsule CHANGE image image_name VARCHAR(255) DEFAULT NULL');
+        $this->addSql('ALTER TABLE capsule RENAME COLUMN image TO image_name');
     }
 }
